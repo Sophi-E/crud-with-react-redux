@@ -5,13 +5,12 @@ const PostForm = () => {
 
   const handleChange = e => {
     setValues({ [e.target.name]: e.target.value });
-    console.log(values);
+    console.log(e.target.name, e.target.value);
   };
   const handleSubmit = e => {
     e.preventDefault();
     const data = {
-      id: new Date(),
-      values
+      id: new Date()
     };
     console.log(data, values);
   };
