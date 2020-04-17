@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 
 const PostForm = () => {
-  const [values, setValues] = useState({ title: "", message: "" });
+  const [values, setValues] = useState({
+    title: "",
+    message: ""
+  });
 
   const handleChange = e => {
-    setValues({ [e.target.name]: e.target.value });
-    console.log(e.target.name, e.target.value);
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value
+    });
   };
   const handleSubmit = e => {
     e.preventDefault();
     const data = {
-      id: new Date()
+      id: new Date(),
+      ...values
     };
-    console.log(data, values);
+    console.log(data);
   };
   return (
     <div>
