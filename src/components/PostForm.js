@@ -14,10 +14,13 @@ const PostForm = () => {
   };
   const handleSubmit = e => {
     e.preventDefault();
+
     const data = {
       id: new Date(),
       ...values
     };
+    setValues(data);
+    console.log(`values ${JSON.stringify(values)}`);
     console.log(data);
   };
   return (
