@@ -20,8 +20,8 @@ const PostForm = () => {
       ...values
     };
     setValues(data);
-    console.log(`values ${JSON.stringify(values)}`);
-    console.log(data);
+    // console.log(`values ${JSON.stringify(values)}`);
+    // console.log(data);
   };
   return (
     <div>
