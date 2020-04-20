@@ -1,8 +1,7 @@
-import React from "react";
-import { ADD_POST } from "./types";
+// import postActions from  './postActions';
 
-export const addPost = () => {
-  return {
-    type: ADD_POST
-  };
-};
+// const allActions ={
+//   postActions
+// }
+
+// export default allActions;

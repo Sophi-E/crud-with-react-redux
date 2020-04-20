@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const PostForm = () => {
+  const dispatch = useDispatch();
   const [values, setValues] = useState({
     title: "",
     message: ""
@@ -20,8 +22,10 @@ const PostForm = () => {
       ...values
     };
     setValues(data);
-    console.log(data);
-    console.log(`values ${JSON.stringify(values)}`);
+    dispatch({
+      type: "ADD_POST",
+      data
+    });
   };
   return (
     <div>
