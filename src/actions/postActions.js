@@ -1,20 +1,15 @@
-const ADD_POST = () => {
+export const addPost = () => {
   return {
     type: "ADD_POST"
   };
 };
-const DELETE_POST = () => {
+export const deletePost = () => {
   return {
     type: "DELETE_POST"
   };
 };
-const UPDATE_POST = () => {
+export const updatePost = () => {
   return {
     type: "UPDATE_POST"
   };
-};
-export default {
-  ADD_POST,
-  DELETE_POST,
-  UPDATE_POST
 };

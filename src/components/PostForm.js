@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { addPost } from "../actions/postActions";
 
 const PostForm = () => {
   const dispatch = useDispatch();
@@ -22,10 +23,10 @@ const PostForm = () => {
       ...values
     };
     setValues(data);
-    dispatch({
-      type: "ADD_POST",
-      data
-    });
+    // dispatch({
+    //   type: "ADD_POST",
+    //   data
+    // });
   };
   return (
     <div>

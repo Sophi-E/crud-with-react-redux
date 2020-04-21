@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const AllPost = () => {
-  const posts = useSelector(state => state.posts);
+  const posts = useSelector(state => state.postReducer);
   return (
     <div>
       <h1>All Posts</h1>
