@@ -23,10 +23,7 @@ const PostForm = () => {
       ...values
     };
     setValues(data);
-    // dispatch({
-    //   type: "ADD_POST",
-    //   data
-    // });
+    dispatch(addPost(data));
   };
   return (
     <div>

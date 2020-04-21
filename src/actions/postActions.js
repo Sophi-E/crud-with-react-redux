@@ -1,6 +1,7 @@
-export const addPost = () => {
+export const addPost = data => {
   return {
-    type: "ADD_POST"
+    type: "ADD_POST",
+    payload: data
   };
 };
 export const deletePost = () => {
