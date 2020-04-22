@@ -6,7 +6,8 @@ const AllPost = () => {
   return (
     <div>
       <h1>All Posts</h1>
-      {posts}
+      {/* {posts} */}
+
       {console.log(posts)}
     </div>
   );

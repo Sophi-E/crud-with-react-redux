@@ -22,8 +22,10 @@ const PostForm = () => {
       id: new Date(),
       ...values
     };
-    setValues(data);
+    console.log(data);
+
     dispatch(addPost(JSON.stringify(data)));
+    setValues({ title: "", message: "" });
   };
   return (
     <div>
