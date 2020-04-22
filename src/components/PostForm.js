@@ -23,7 +23,7 @@ const PostForm = () => {
       ...values
     };
     setValues(data);
-    dispatch(addPost(data));
+    dispatch(addPost(JSON.stringify(data)));
   };
   return (
     <div>
