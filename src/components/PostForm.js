@@ -4,28 +4,20 @@ import { addPost } from "../actions/postActions";
 
 const PostForm = () => {
   const dispatch = useDispatch();
-  const [values, setValues] = useState({
-    title: "",
-    message: ""
-  });
+  const [title, setTitle] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleChange = e => {
-    setValues({
-      ...values,
-      [e.target.name]: e.target.value
-    });
-  };
   const handleSubmit = e => {
     e.preventDefault();
-
     const data = {
       id: new Date(),
-      ...values
+      title,
+      message
     };
+    dispatch(addPost(data));
+    setTitle("");
+    setMessage("");
     console.log(data);
-
-    dispatch(addPost(JSON.stringify(data)));
-    setValues({ title: "", message: "" });
   };
   return (
     <div>
@@ -33,19 +25,21 @@ const PostForm = () => {
       <form onSubmit={handleSubmit}>
         <input
           required
+          value={title}
           type="text"
           name="title"
           placeholder="Enter Post Title"
-          onChange={handleChange}
+          onChange={e => setTitle(e.target.value)}
         />
         <br /> <br />
         <textarea
           required
+          value={message}
           name="message"
           rows="5"
           cols="28"
           placeholder="Enter Post"
-          onChange={handleChange}
+          onChange={e => setMessage(e.target.value)}
         />
         <br /> <br />
         <button>Post</button>
