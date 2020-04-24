@@ -4,9 +4,10 @@ export const addPost = data => {
     payload: data
   };
 };
-export const deletePost = () => {
+export const deletePost = id => {
   return {
-    type: "DELETE_POST"
+    type: "DELETE_POST",
+    payload: id
   };
 };
 export const updatePost = () => {
