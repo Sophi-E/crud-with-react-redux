@@ -3,7 +3,7 @@ const postReducer = (state = [], action) => {
     case "ADD_POST":
       return state.concat([action.payload]);
     case "DELETE_POST":
-      return state.filter(post => post.id !== action.id);
+      return state.filter(post => post.id !== [action.payload]);
     default:
       return state;
   }
