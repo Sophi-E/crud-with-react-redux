@@ -12,12 +12,12 @@ const PostForm = () => {
     const data = {
       id: new Date(),
       title,
-      message
+      message,
+      editing: false
     };
     dispatch(addPost(data));
     setTitle("");
     setMessage("");
-    console.log(data);
   };
   return (
     <div>

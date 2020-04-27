@@ -10,10 +10,17 @@ export const deletePost = id => {
     payload: id
   };
 };
-export const updatePost = () => {
+export const editPost = id => {
   return {
-    type: "UPDATE_POST"
+    type: "EDIT_POST",
+    payload: id
   };
 };
+// export const updatePost = () => {
+//   return {
+//     type: "UPDATE_POST",
+//     payload: id
+//   };
+// };
 
 // export const ADD_POST = 'ADD_POST';
