@@ -15,7 +15,7 @@ const AllPost = () => {
           <button className="btn editBtn">Edit</button>
           <button
             className="btn deleteBtn"
-            onClick={() => dispatch(deletePost(id))}
+            onClick={() => dispatch(deletePost(post.id))}
           >
             Delete
           </button>
