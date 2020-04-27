@@ -16,6 +16,11 @@ export const editPost = id => {
     payload: id
   };
 };
+export const update = () => {
+  return {
+    type: "UPDATE"
+  };
+};
 // export const updatePost = () => {
 //   return {
 //     type: "UPDATE_POST",
