@@ -1,10 +1,9 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { deletePost, editPost } from "../actions/postActions";
+import Post from "./Post";
 import EditComponent from "./EditComponent";
+import { useSelector } from "react-redux";
 
 const AllPost = () => {
-  const dispatch = useDispatch();
   const posts = useSelector(state => state.postReducer);
   return (
     <div>
@@ -12,24 +11,9 @@ const AllPost = () => {
       {posts.map(post => (
         <div key={post.id}>
           {post.editing ? (
-            <EditComponent />
+            <EditComponent key={post.id} post={post} />
           ) : (
-            <div className="card" key={post.id}>
-              <h2>{post.title}</h2>
-              <p>{post.message}</p>
-              <button
-                className="btn editBtn"
-                onClick={() => dispatch(editPost(post.id))}
-              >
-                Edit
-              </button>
-              <button
-                className="btn deleteBtn"
-                onClick={() => dispatch(deletePost(post.id))}
-              >
-                Delete
-              </button>
-            </div>
+            <Post key={post.id} post={post} />
           )}
         </div>
       ))}

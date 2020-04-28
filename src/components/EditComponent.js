@@ -1,42 +1,42 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { update } from "../actions/postActions";
 
-const PostForm = () => {
+const PostForm = ({ post }) => {
   const dispatch = useDispatch();
-  const [title, setTitle] = useState("");
-  const [message, setMessage] = useState("");
 
-  const handleSubmit = e => {
+  const [newTitle, setNewTitle] = useState("");
+  const [newMessage, setNewMessage] = useState("");
+
+  const handleEdit = e => {
     e.preventDefault();
     const data = {
-      title,
-      message
+      newTitle,
+      newMessage
     };
-    dispatch(update(id, data));
-    // setTitle("");
-    // setMessage("");
+    dispatch(update(post.id, data));
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleEdit}>
         <input
           required
-          value={title}
+          value={newTitle}
           type="text"
           name="title"
           placeholder="Enter Post Title"
-          onChange={e => setTitle(e.target.value)}
+          onChange={e => setNewTitle(e.target.value)}
         />
         <br /> <br />
         <textarea
           required
-          value={message}
+          value={newMessage}
           name="message"
           rows="5"
           cols="28"
           placeholder="Enter Post"
-          onChange={e => setMessage(e.target.value)}
+          onChange={e => setNewMessage(e.target.value)}
         />
         <br /> <br />
         <button>Update</button>

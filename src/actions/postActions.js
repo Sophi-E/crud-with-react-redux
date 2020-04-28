@@ -17,6 +17,7 @@ export const editPost = id => {
   };
 };
 export const update = (id, data) => {
+  console.log(id);
   return {
     type: "UPDATE",
     payload: id,
