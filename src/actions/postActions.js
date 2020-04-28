@@ -16,9 +16,11 @@ export const editPost = id => {
     payload: id
   };
 };
-export const update = () => {
+export const update = (id, data) => {
   return {
-    type: "UPDATE"
+    type: "UPDATE",
+    payload: id,
+    data
   };
 };
 // export const updatePost = () => {
